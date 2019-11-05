@@ -7,9 +7,9 @@ function Collection() {
     return (
       <main className='Collection'>
         <Nav />
-        <section class="container">
+        <section className="container">
             <h3>Collection - Ripe</h3>
-            <label for='sort'>Sort:</label>
+            <label htmlFor='sort'>Sort:</label>
             <select>
             <option>Name</option>
             <option>Year</option>

@@ -5,22 +5,22 @@ import './AddTeaForm.css'
 function AddTeaForm() {
     return (
       <main className='AddTeaForm'>
-        <section class="add">
+        <section className="add">
             <h3 className='section-title'>Add A Tea</h3>
                 <form className='form-container'>
-                    <label for="username">Tea Name: </label>
+                    <label htmlFor="username">Tea Name: </label>
                     <input name='tea-name' placeholder="tea name"/>
                     <br />
-                    <label for="vendor">Vendor: </label>
+                    <label htmlFor="vendor">Vendor: </label>
                     <input name='vendor' placeholder="vendor" />
                     <br />
-                    <label for="quantity">Quantity: </label>
+                    <label htmlFor="quantity">Quantity: </label>
                     <input name='quantity' placeholder="quantity" />
                     <br />
-                    <label for="cost">Cost: </label>
+                    <label htmlFor="cost">Cost: </label>
                     <input name='cost' placeholder="cost" />
                     <br />
-                    <label for="link">Link: </label>
+                    <label htmlFor="link">Link: </label>
                     <input name='link' placeholder="link" />
                     <br />
                     <button>Submit</button>

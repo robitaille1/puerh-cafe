@@ -3,18 +3,35 @@ import { Link } from 'react-router-dom'
 import Nav from '../Nav/Nav'
 import AddTeaForm from '../AddTeaForm/AddTeaForm'
 import AddSessionForm from '../AddSessionForm/AddSessionForm'
+import ApiContext from '../../ApiContext'
+import { countTeasForCollection } from '../../collections-helpers'
 import './Dashboard.css'
 
-function Dashboard() {
+export default class Dashboard extends React.Component {
+  static contextType = ApiContext
+
+  teaDisplay = () => {
+    if(countTeasForCollection <= 1 ){
+      return 'Tea'
+    } else {
+      return 'Teas'
+    }
+  }
+  
+  render(){
+    const { collections=[] } = this.context
+    const { teas=[] } = this.context
+    // const { sessions=[] } = this.context
+
     return (
       <main className='Dashboard'>
         <Nav />
-        <section class="container collections">
+        <section className="container collections">
             <h3>Collections</h3>
-            <div class="collection"><Link to='/collection/ripe'>Ripe - 1 Tea</Link></div>
-            <div class="collection"><a href='/dashboard'>Young Raw - 11 teas</a></div>
-            <div class="collection"><a href='/dashboard'>Aged Raw - 5 Teas</a></div>
-            <label for='collection-name'>Add New Collection:</label>
+            {collections.map(collection => 
+              <div key={collection.id} className="collection"><Link to={`/collection/${collection.name}`}>{collection.name} - {countTeasForCollection(teas, collection.id)} {this.teaDisplay()}</Link></div>
+            )}
+            <label htmlFor='collection-name'>Add New Collection:</label>
             <input type='text' name='collection-name'></input>
             <button type='submit'>Submit</button>
         </section>
@@ -23,6 +40,7 @@ function Dashboard() {
       </main>
     );
   }
+}
   
-  export default Dashboard;
+
   
