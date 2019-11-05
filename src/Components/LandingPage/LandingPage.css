@@ -1,0 +1,14 @@
+button {
+    margin: 5px 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+
+.LandingPage {
+    margin-top: 100px;
+}
+
+.app-name {
+    font-size: 50px;
+}

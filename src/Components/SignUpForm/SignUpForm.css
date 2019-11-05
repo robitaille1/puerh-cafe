@@ -1,0 +1,12 @@
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container {
+  /* padding: 20px 200px; */
+  text-align: center;
+}
+
+

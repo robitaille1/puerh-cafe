@@ -1,0 +1,22 @@
+.Dashboard {
+  /* padding: 20px 100px; */
+  padding: 20px 10px;
+}
+.collection {
+  margin: 10px 5px;
+}
+  
+.add {
+  /* padding: 10px 80px; */
+  border: 1px solid black;
+  margin-top: 20px;
+  text-align: left
+}
+
+.collections {
+  border: 1px solid black;
+}
+
+.section-title {
+  text-align: center;
+}

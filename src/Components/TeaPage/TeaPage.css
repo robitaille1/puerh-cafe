@@ -1,0 +1,14 @@
+.session {
+    text-align: left;
+    margin: 10px;
+    border: 1px solid black;
+    padding: 5px 20px;
+  }
+  
+  .bold {
+    font-weight: bold;
+  }
+
+  .TeaPage {
+    /* padding: 20px 100px; */
+  }
