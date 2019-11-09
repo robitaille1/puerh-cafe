@@ -6,6 +6,7 @@ import AddSessionForm from '../AddSessionForm/AddSessionForm'
 import ApiContext from '../../ApiContext'
 import { countTeasForCollection } from '../../collections-helpers'
 import './Dashboard.css'
+import AddCollectionForm from '../AddCollectionForm/AddCollectionForm'
 
 export default class Dashboard extends React.Component {
   static contextType = ApiContext
@@ -17,11 +18,14 @@ export default class Dashboard extends React.Component {
       return 'Teas'
     }
   }
+
+  handleAddTea = teaId => {
+    this.props.history.push(`/tea/${teaId}`)
+  }
   
   render(){
     const { collections=[] } = this.context
     const { teas=[] } = this.context
-    // const { sessions=[] } = this.context
 
     return (
       <main className='Dashboard'>
@@ -29,14 +33,12 @@ export default class Dashboard extends React.Component {
         <section className="container collections">
             <h3>Collections</h3>
             {collections.map(collection => 
-              <div key={collection.id} className="collection"><Link to={`/collection/${collection.name}`}>{collection.name} - {countTeasForCollection(teas, collection.id)} {this.teaDisplay()}</Link></div>
+              <div key={collection.id} className="collection"><Link to={`/collection/${collection.id}`}>{collection.name} - {countTeasForCollection(teas, collection.id)} {this.teaDisplay()}</Link></div>
             )}
-            <label htmlFor='collection-name'>Add New Collection:</label>
-            <input type='text' name='collection-name'></input>
-            <button type='submit'>Submit</button>
+            <AddCollectionForm />
         </section>
-        <AddTeaForm />
-        <AddSessionForm />
+        <AddTeaForm onAddTea={this.handleAddTea} collections={collections}/>
+        <AddSessionForm onAddTea={this.handleAddTea} />
       </main>
     );
   }

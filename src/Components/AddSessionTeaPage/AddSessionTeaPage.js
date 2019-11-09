@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 // import { Link } from 'react-router-dom'
+// import { Form } from 'react-advanced-form'
 import ApiContext from '../../ApiContext'
 import config from '../../config'
-import './AddSessionForm.css'
-import { findTeaId } from '../../collections-helpers';
+import './AddSessionTeaPage.css'
 
-export default class AddSessionForm extends Component {
+export default class AddSessionFormTeaPage extends Component {
   static defaultProps = {
     history: {
       push: () => { }
@@ -16,16 +16,16 @@ export default class AddSessionForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    const { teas=[] } = this.context
-    const idForTea = findTeaId(teas, event.target['tea-name'].value);
+
     const newSession = {
-      name: event.target['tea-name'].value,
-      teaid: idForTea.id,
+      name: this.props.name,
+      teaid: this.props.id,
       quantity: event.target['quantity'].value,
       parameters: event.target['parameters'].value,
       notes: event.target['notes'].value,
       rating: event.target['rating'].value,
-    }
+    } 
+
     fetch(`${config.API_ENDPOINT}/session`, {
       method: 'POST',
       headers: {
@@ -40,7 +40,7 @@ export default class AddSessionForm extends Component {
       })
       .then(session => {
         this.context.addSession(session)
-        this.props.onAddTea(session.teaid)
+        this.props.history.push(`/tea/${session.teaid}`)
       })
       .catch(error => {
         console.error({ error })
@@ -48,20 +48,12 @@ export default class AddSessionForm extends Component {
 }
 
   render() {
-    const { teas=[] } = this.context
-    
     return (
       <main className='AddSessionForm'>
         <section className="add">
             <h3 className='section-title'>New Session</h3>
                 <form onSubmit={this.handleSubmit} className='form-container'>
-                    <label htmlFor="tea-name">Tea Name: </label>
-                    <select name='tea-name'>
-                        <option value={true} disabled>Pick a tea</option>
-                        {teas.map(tea => 
-                          <option key={tea.id} value={tea.name}>{tea.year} {tea.vendor} - {tea.name}</option>
-                        )}
-                    </select>
+                    <p className='tea-name-session'>{this.props.name}</p>
                     <br />
                     <label htmlFor="quantity">Quantity: </label>
                     <input name='quantity' placeholder="7g" />
@@ -82,4 +74,3 @@ export default class AddSessionForm extends Component {
     );
   }
 }
-  
