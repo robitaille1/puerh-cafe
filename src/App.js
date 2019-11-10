@@ -76,6 +76,9 @@ class App extends Component {
     this.setState({
         collections: this.state.collections.filter(collection => collection.id !== collectionId)
     })
+    this.setState({
+      teas: this.state.teas.filter(tea => tea.collectionid !== collectionId)
+  })
   }
 
   handleDeleteTea = teaId => {
