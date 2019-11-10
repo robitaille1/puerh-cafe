@@ -18,6 +18,11 @@ export default class EditSession extends React.Component {
     this.props.history.push(`/tea/${teaId}`)
   };
 
+  onEditTea = () => {
+    const { teaId } = this.props.match.params
+    this.props.history.push(`/tea/${teaId}`)
+  }
+
   render() {
     const { teas=[] } = this.context
     const { teaId } = this.props.match.params
@@ -25,7 +30,7 @@ export default class EditSession extends React.Component {
     return (
       <main className='TeaPage'>
           {teaInfo.map(tea => 
-            <EditTeaForm onCancel={this.handleCancel} key={tea.id} tea={tea} />
+            <EditTeaForm onCancel={this.handleCancel} onSubmitEdit={this.onEditTea} key={tea.id} id={tea.id} tea={tea} />
           )}
       </main>
     );

@@ -1,7 +1,4 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
-// import './AddSessionForm.css'
-// import { countTeasForCollection } from '../../collections-helpers';
 import ApiContext from '../../ApiContext'
 import config from '../../config'
 
@@ -12,12 +9,18 @@ export default class AddCollectionForm extends React.Component  {
         },
       }
 
+      state = { 
+        name: "" 
+      };
+
       static contextType = ApiContext;
+
+      handleFields = e => this.setState({ [e.target.name]: e.target.value });
 
       handleSubmit = (event) => {
         event.preventDefault()
         const newCollection = {
-          name: event.target['collection-name'].value,
+          name: event.target['name'].value,
           userid: 1,
         }
         fetch(`${config.API_ENDPOINT}/collection`, {
@@ -35,6 +38,7 @@ export default class AddCollectionForm extends React.Component  {
           .then(collection => {
             this.context.addCollection(collection)
             this.props.history.push(`/dashboard`)
+            this.setState({name: ''})
           })
           .catch(error => {
             console.error({ error })
@@ -45,8 +49,13 @@ export default class AddCollectionForm extends React.Component  {
     return (
       <main className='AddCollectionForm'>
         <form onSubmit={this.handleSubmit}>
-            <label htmlFor='collection-name'>Add New Collection: </label>
-            <input type='text' name='collection-name'></input>
+            <label htmlFor='name'>Add New Collection: </label>
+            <input 
+              type='text' 
+              name='name'
+              onChange={this.handleFields}
+              value={this.state.name} 
+            />
             <button type='submit'>Submit</button>
         </form>
       </main>

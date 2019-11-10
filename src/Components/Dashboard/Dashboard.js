@@ -4,6 +4,7 @@ import Nav from '../Nav/Nav'
 import AddTeaForm from '../AddTeaForm/AddTeaForm'
 import AddSessionForm from '../AddSessionForm/AddSessionForm'
 import ApiContext from '../../ApiContext'
+import RecentTeas from '../RecentTeas/RecentTeas'
 import { countTeasForCollection } from '../../collections-helpers'
 import './Dashboard.css'
 import AddCollectionForm from '../AddCollectionForm/AddCollectionForm'
@@ -37,6 +38,7 @@ export default class Dashboard extends React.Component {
             )}
             <AddCollectionForm />
         </section>
+        <RecentTeas />
         <AddTeaForm onAddTea={this.handleAddTea} collections={collections}/>
         <AddSessionForm onAddTea={this.handleAddTea} />
       </main>

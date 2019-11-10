@@ -11,7 +11,7 @@ export default class AddTeaForm extends Component {
       push: () => { }
     },
   }
-  
+
   static contextType = ApiContext;
 
   handleSubmit = (event) => {
@@ -19,8 +19,8 @@ export default class AddTeaForm extends Component {
     const { collections=[] } = this.context
     const idForCollection = findCollectionId(collections, event.target['collection-name'].value);
     const newTea = {
-      year: event.target['tea-year'].value,
-      name: event.target['tea-name'].value,
+      year: event.target['teaYear'].value,
+      name: event.target['teaName'].value,
       collectionid: idForCollection.id,
       vendor: event.target['vendor'].value,
       quantity: event.target['quantity'].value,
@@ -54,30 +54,48 @@ export default class AddTeaForm extends Component {
         <section className="add">
             <h3 className='section-title'>Add A Tea</h3>
                 <form onSubmit={this.handleSubmit} className='form-container'>
-                    <label htmlFor="collection-name">Tea Name: </label>
+                    <label htmlFor="collection-name">Collection Name: </label>
                     <select name='collection-name'>
                     {this.props.collections.map(collection => 
                           <option key={collection.id} value={collection.name}>{collection.name}</option>
                         )}
                     </select>
                     <br/>
-                    <label htmlFor="tea-year">Year: </label>
-                    <input name='tea-year' placeholder="2019"/>
+                    <label htmlFor="teaYear">Year: </label>
+                    <input 
+                      name='teaYear' 
+                      placeholder="2019" 
+                     />
                     <br/>
-                    <label htmlFor="tea-name">Tea Name: </label>
-                    <input name='tea-name' placeholder="tea name"/>
+                    <label htmlFor="teaName">Tea Name: </label>
+                    <input 
+                      name='teaName' 
+                      placeholder="tea name" 
+                    />
                     <br />
                     <label htmlFor="vendor">Vendor: </label>
-                    <input name='vendor' placeholder="vendor" />
+                    <input 
+                      name='vendor' 
+                      placeholder="vendor"
+                    />
                     <br />
                     <label htmlFor="quantity">Quantity: </label>
-                    <input name='quantity' placeholder="quantity" />
+                    <input 
+                      name='quantity' 
+                      placeholder="quantity" 
+                    />
                     <br />
                     <label htmlFor="cost">Cost: </label>
-                    <input name='cost' placeholder="cost" />
+                    <input 
+                      name='cost' 
+                      placeholder="cost" 
+                    />
                     <br />
                     <label htmlFor="link">Link: </label>
-                    <input name='link' placeholder="link" />
+                    <input 
+                      name='link' 
+                      placeholder="link" 
+                    />
                     <br />
                     <button>Submit</button>
                 </form>

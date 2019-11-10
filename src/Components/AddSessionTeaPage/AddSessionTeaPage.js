@@ -12,7 +12,16 @@ export default class AddSessionFormTeaPage extends Component {
     },
   }
 
+  state = { 
+    quantity: '',
+    parameters: '',
+    notes: '',
+    rating: ''
+  };
+
   static contextType = ApiContext;
+
+  handleFields = e => this.setState({ [e.target.name]: e.target.value });
 
   handleSubmit = (event) => {
     event.preventDefault()
@@ -41,6 +50,12 @@ export default class AddSessionFormTeaPage extends Component {
       .then(session => {
         this.context.addSession(session)
         this.props.history.push(`/tea/${session.teaid}`)
+        this.setState({
+          quantity: '',
+          parameters: '',
+          notes: '',
+          rating: '', 
+        })
       })
       .catch(error => {
         console.error({ error })
@@ -56,16 +71,32 @@ export default class AddSessionFormTeaPage extends Component {
                     <p className='tea-name-session'>{this.props.name}</p>
                     <br />
                     <label htmlFor="quantity">Quantity: </label>
-                    <input name='quantity' placeholder="7g" />
+                    <input 
+                      name='quantity' 
+                      placeholder="7g" 
+                      onChange={this.handleFields}
+                      value={this.state.quantity}
+                    />
                     <br />
                     <label htmlFor="parameters">Parameters: </label>
-                    <textarea name='parameters'></textarea>   
+                    <textarea 
+                      name='parameters' 
+                      onChange={this.handleFields}
+                      value={this.state.parameters}
+                    /> 
                     <br />
                     <label htmlFor="notes">Tasting Notes: </label>
-                    <textarea name='notes'></textarea> 
+                    <textarea name='notes' 
+                      onChange={this.handleFields}
+                      value={this.state.notes}
+                    /> 
                     <br />
                     <label htmlFor="rating">Rating: </label>
-                    <input name='rating' placeholder="rating" />
+                    <input 
+                      name='rating' 
+                      placeholder="rating" 
+                      onChange={this.handleFields}
+                      value={this.state.rating}/>
                     <br />
                     <button>Submit</button>
                 </form>

@@ -4,12 +4,18 @@ import { Link } from 'react-router-dom'
 import Nav from '../Nav/Nav'
 import './LoginForm.css'
 
-class LoginForm extends Component {
+export default class LoginForm extends Component {
 
-  // handleSubmitBasicAuth = ev => {
+  // static defaultProps = {
+  //   onLoginSuccess: () => {}
+  // }
+
+  // handleSubmitBasicAuth = (ev) => {
   //   ev.preventDefault()
-  //   const { user_name, password } = ev.target
 
+  //   const user_name = ev.target['user_name']
+  //   const password = ev.target['password']
+       
   //   TokenService.saveAuthToken(
   //     TokenService.makeBasicAuthToken(user_name.value, password.value)
   //   )
@@ -26,22 +32,21 @@ class LoginForm extends Component {
         <Nav />
         <section className="form-container">
         <h3>Please login to access your dashboard</h3>
-        {/* <form onSubmit={this.handleSubmitBasicAuth} className='login-form'> */}
         <form className='login-form'>
             <div className='input-element'>
-              <label htmlFor="username">Username </label>
+              <label htmlFor="user_name">Username </label>
               <br/>
-              <input name='username' placeholder="username" />
+              <input name='user_name' placeholder="username" />
             </div>
             <div className='input-element'>
               <label htmlFor="username">Password </label>
               <br />
-              <input name='password' placeholder="password" />
+              <input type='password' name='password' placeholder="password" />
             </div>
             <br />
             <Link to='/dashboard'>
-                <button>Submit</button>
-            </Link>
+              <button type='submit'>Submit</button>
+            </Link>  
             <p>Don't have an account?</p>
               <Link to='/signup'>
                   <button>Sign Up</button>
@@ -53,4 +58,3 @@ class LoginForm extends Component {
   }
   }
   
-  export default LoginForm;

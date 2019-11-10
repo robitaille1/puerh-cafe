@@ -9,7 +9,8 @@ import Nav from '../Nav/Nav'
 export default class EditTeaForm extends Component {
   static defaultProps = {
     history: {
-      push: () => { }
+      push: () => { },
+      id: ''
     },
   }
 
@@ -27,25 +28,6 @@ export default class EditTeaForm extends Component {
   static contextType = ApiContext;
 
   componentDidMount() {
-    // const { teas=[] } = this.context
-    // const { teaId } = this.props.match.params
-    // const teaInfo = getTea(teas, teaId)
-    // {teaInfo.map(tea =>
-    //   this.setState({
-    //     tea
-    //   })
-    //   )}
-    // console.log(teaInfo[0])
-    // this.setState({
-    //     id: teaInfo[0].id,
-    //     year: teaInfo[0].year,
-    //     name: teaInfo[0].name,
-    //     collectionid: teaInfo[0].collectionid,
-    //     vendor: teaInfo[0].vendor,
-    //     quantity: teaInfo[0].quantity,
-    //     cost: teaInfo[0].cost,
-    //     link: teaInfo[0].link,
-    // })
     this.setState({
       id: this.props.tea.id,
       year: this.props.tea.year,
@@ -88,10 +70,9 @@ export default class EditTeaForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    const { teaId } = this.props.match.params
     const { id, year, name, collectionid, vendor, quantity, cost, link  } = this.state
     const updatedTea = { id, year, name, collectionid, vendor, quantity, cost, link  }
-    fetch(`${config.API_ENDPOINT}/tea/${teaId}`, {
+    fetch(`${config.API_ENDPOINT}/tea/${this.props.id}`, {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json',
@@ -102,7 +83,7 @@ export default class EditTeaForm extends Component {
       .then(() => {
         this.resetFields(updatedTea)
         this.context.updateTea(updatedTea)
-        this.props.history.push(`/tea/${updatedTea.id}`)
+        this.props.onSubmitEdit()
       })
       .catch(error => {
         console.error(error)

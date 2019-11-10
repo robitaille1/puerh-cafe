@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom'
 import './App.css'
 import LandingPage from './Components/LandingPage/LandingPage'
-import SignUpForm from './Components/SignUpForm/SignUpForm'
-import LoginForm from './Components/LoginForm/LoginForm'
+// import SignUpForm from './Components/SignUpForm/SignUpForm'
+// import LoginForm from './Components/LoginForm/LoginForm'
 import Dashboard from './Components/Dashboard/Dashboard'
 import CollectionPage from './Components/CollectionPage/CollectionPage'
 import TeaPage from './Components/TeaPage/TeaPage'
 import EditTea from './Components/EditTea/EditTea'
-// import EditSessionForm from './Components/EditSessionForm/EditSessionForm'
 import EditSession from './Components/EditSession/EditSession'
+import AllTea from './Components/AllTea/AllTea'
 import ApiContext from './ApiContext'
 import config from './config'
 
@@ -74,19 +74,19 @@ class App extends Component {
 
   handleDeleteCollection = collectionId => {
     this.setState({
-        collections: this.state.collections.filter(collection => collection.id !== collectionId )
+        collections: this.state.collections.filter(collection => collection.id !== collectionId)
     })
   }
 
   handleDeleteTea = teaId => {
     this.setState({
-        teas: this.state.teas.filter(tea => tea.id !== teaId )
+        teas: this.state.teas.filter(tea => tea.id !== teaId)
     })
   }
 
   handleDeleteSession = sessionId => {
     this.setState({
-        sessions: this.state.sessions.filter(session => session.id !== sessionId )
+        sessions: this.state.sessions.filter(session => session.id !== sessionId)
     })
   }
 
@@ -166,6 +166,8 @@ class App extends Component {
       );
     }
 
+    static contextType = ApiContext
+
   render(){
     const value = {
       collections: this.state.collections,
@@ -184,9 +186,10 @@ class App extends Component {
       <ApiContext.Provider value={value}>
         <main className='App'>
           <Route exact path='/' component={LandingPage}/>
-          <Route path='/signup' component={SignUpForm}/>
-          <Route path='/login' component={LoginForm} />
+          {/* <Route path='/signup' component={SignUpForm}/>
+          <Route path='/login' component={LoginForm} /> */}
           <Route path='/dashboard' component={Dashboard} />
+          <Route exact path='/all/tea' component={AllTea} />
           {this.renderCollectionRoutes()}
           {this.renderTeaRoutes()}
           {this.renderEditTeaRoutes()}

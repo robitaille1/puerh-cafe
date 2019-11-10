@@ -59,10 +59,9 @@ export default class EditSessionForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    const { sessionId } = this.props.match.params
     const { id, name, teaid, quantity, parameters, notes, rating  } = this.state
     const updatedSession = { id, name, teaid, quantity, parameters, notes, rating  }
-    fetch(`${config.API_ENDPOINT}/session/${sessionId}`, {
+    fetch(`${config.API_ENDPOINT}/session/${this.props.id}`, {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json',
@@ -73,7 +72,7 @@ export default class EditSessionForm extends Component {
       .then(() => {
         this.resetFields(updatedSession)
         this.context.updateSession(updatedSession)
-        this.props.history.push(`/tea/${updatedSession.teaid}`)
+        this.props.onSubmitEdit()
       })
       .catch(error => {
         console.error(error)

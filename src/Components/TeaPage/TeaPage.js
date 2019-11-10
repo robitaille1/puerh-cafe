@@ -6,6 +6,7 @@ import config from '../../config'
 import Nav from '../Nav/Nav'
 import SessionItem from '../SessionItem/SessionItem'
 import AddSessionTeaPage from '../AddSessionTeaPage/AddSessionTeaPage'
+import TeaError from '../TeaError/TeaError'
 import './TeaPage.css'
 
 
@@ -21,7 +22,9 @@ export default class TeaPage extends React.Component {
     e.preventDefault()
     const { teaId } = this.props.match.params
 
-    fetch(`${config.API_ENDPOINT}/tea/${teaId}`, {
+    const teaIdNumber = Number(teaId)
+
+    fetch(`${config.API_ENDPOINT}/tea/${teaIdNumber}`, {
         method: 'DELETE',
         headers: {
         'content-type': 'application/json'
@@ -32,7 +35,7 @@ export default class TeaPage extends React.Component {
             return res.json().then(event => console.log(event))
     })
     .then(() => {
-        this.context.deleteTea(teaId)
+        this.context.deleteTea(teaIdNumber)
         this.props.history.push(`/dashboard`)
     })
     .catch(error => {
@@ -50,6 +53,9 @@ export default class TeaPage extends React.Component {
     return (
       <main className='TeaPage'>
         <Nav />
+        {teaInfo.length === 0 ? 
+          <TeaError/> :
+          <div>
         <section className="container">
         {teaInfo.map(tea =>
           <div key={tea.id}>
@@ -75,8 +81,10 @@ export default class TeaPage extends React.Component {
             <AddSessionTeaPage key={tea.id} name={tea.name} id={tea.id}/>
           )}
         </section>
+        </div>
+        }
       </main>
     );
   }
-  }
+}
   
