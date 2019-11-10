@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import config from '../../config'
 import { Link } from 'react-router-dom'
-import ApiContext from '../../ApiContext'
+import ApiContext from '../../Context/ApiContext'
 
 class SessionItem extends Component {
     static defaultProps ={

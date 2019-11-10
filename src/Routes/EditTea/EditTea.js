@@ -1,8 +1,7 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
 import { getTea } from '../../collections-helpers';
-import ApiContext from '../../ApiContext'
-import EditTeaForm from '../EditTeaForm/EditTeaForm'
+import ApiContext from '../../Context/ApiContext'
+import EditTeaForm from '../../Components/EditTeaForm/EditTeaForm'
 
 
 export default class EditSession extends React.Component {

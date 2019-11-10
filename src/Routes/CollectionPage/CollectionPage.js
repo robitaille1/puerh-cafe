@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Nav from '../Nav/Nav'
-import ApiContext from '../../ApiContext'
+import Nav from '../../Components/Nav/Nav'
+import ApiContext from '../../Context/ApiContext'
 import config from '../../config'
 import { getTeasForCollection, getCollection } from '../../collections-helpers'
-import CollectionError from '../CollectionError/CollectionError'
+import CollectionError from '../../Components/CollectionError/CollectionError'
 import './CollectionPage.css'
 
 export default class CollectionPage extends React.Component {

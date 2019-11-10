@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import ApiContext from '../../ApiContext'
-import Nav from '../Nav/Nav'
+import ApiContext from '../../Context/ApiContext'
+import Nav from '../../Components/Nav/Nav'
 
 
 

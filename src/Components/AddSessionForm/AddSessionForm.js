@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-// import { Link } from 'react-router-dom'
-import ApiContext from '../../ApiContext'
+import ApiContext from '../../Context/ApiContext'
 import config from '../../config'
 import './AddSessionForm.css'
 import { findTeaId } from '../../collections-helpers';

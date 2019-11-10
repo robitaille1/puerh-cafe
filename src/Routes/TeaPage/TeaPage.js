@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { getSessionsForTea, getTea } from '../../collections-helpers'
-import ApiContext from '../../ApiContext'
+import ApiContext from '../../Context/ApiContext'
 import config from '../../config'
-import Nav from '../Nav/Nav'
-import SessionItem from '../SessionItem/SessionItem'
-import AddSessionTeaPage from '../AddSessionTeaPage/AddSessionTeaPage'
-import TeaError from '../TeaError/TeaError'
+import Nav from '../../Components/Nav/Nav'
+import SessionItem from '../../Components/SessionItem/SessionItem'
+import AddSessionTeaPage from '../../Components/AddSessionTeaPage/AddSessionTeaPage'
+import TeaError from '../../Components/TeaError/TeaError'
 import './TeaPage.css'
 
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import ApiContext from '../../ApiContext'
+import ApiContext from '../../Context/ApiContext'
 
 
 export default class RecentTeas extends Component {

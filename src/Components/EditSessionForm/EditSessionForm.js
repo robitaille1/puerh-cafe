@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import config from '../../config'
-import ApiContext from '../../ApiContext'
-// import { getSession } from '../../collections-helpers';
-// import { Link } from 'react-router-dom'
-// import './AddTeaForm.css'
+import ApiContext from '../../Context/ApiContext'
 import Nav from '../Nav/Nav'
 
 export default class EditSessionForm extends Component {

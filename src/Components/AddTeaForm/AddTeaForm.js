@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import config from '../../config'
-import ApiContext from '../../ApiContext'
+import ApiContext from '../../Context/ApiContext'
 import { findCollectionId } from '../../collections-helpers';
-// import { Link } from 'react-router-dom'
 import './AddTeaForm.css'
 
 export default class AddTeaForm extends Component {

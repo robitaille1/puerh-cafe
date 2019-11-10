@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Nav from '../Nav/Nav'
-import AddTeaForm from '../AddTeaForm/AddTeaForm'
-import AddSessionForm from '../AddSessionForm/AddSessionForm'
-import ApiContext from '../../ApiContext'
-import RecentTeas from '../RecentTeas/RecentTeas'
+import Nav from '../../Components/Nav/Nav'
+import AddTeaForm from '../../Components/AddTeaForm/AddTeaForm'
+import AddSessionForm from '../../Components/AddSessionForm/AddSessionForm'
+import ApiContext from '../../Context/ApiContext'
+import RecentTeas from '../../Components/RecentTeas/RecentTeas'
 import { countTeasForCollection } from '../../collections-helpers'
 import './Dashboard.css'
-import AddCollectionForm from '../AddCollectionForm/AddCollectionForm'
+import AddCollectionForm from '../../Components/AddCollectionForm/AddCollectionForm'
 
 export default class Dashboard extends React.Component {
   static contextType = ApiContext

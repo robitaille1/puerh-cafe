@@ -16,7 +16,6 @@ function LandingPage() {
             <Link to='/signup'>
               <button>Sign Up</button>
             </Link> */}
-
             <Link to='/dashboard'>
               <button>Home</button>
             </Link>

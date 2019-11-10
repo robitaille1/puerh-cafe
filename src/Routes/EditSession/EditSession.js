@@ -1,8 +1,7 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
 import { getSession} from '../../collections-helpers'
-import ApiContext from '../../ApiContext'
-import EditSessionForm from '../EditSessionForm/EditSessionForm'
+import ApiContext from '../../Context/ApiContext'
+import EditSessionForm from '../../Components/EditSessionForm/EditSessionForm'
 
 
 export default class EditSession extends React.Component {

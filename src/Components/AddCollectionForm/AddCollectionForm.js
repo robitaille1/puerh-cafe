@@ -1,5 +1,5 @@
 import React from 'react'
-import ApiContext from '../../ApiContext'
+import ApiContext from '../../Context/ApiContext'
 import config from '../../config'
 
 export default class AddCollectionForm extends React.Component  {
