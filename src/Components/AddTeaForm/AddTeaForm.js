@@ -53,50 +53,69 @@ export default class AddTeaForm extends Component {
         <section className="add">
             <h3 className='section-title'>Add A Tea</h3>
                 <form onSubmit={this.handleSubmit} className='form-container'>
-                    <label htmlFor="collection-name">Collection Name: </label>
-                    <select name='collection-name'>
-                    {this.props.collections.map(collection => 
-                          <option key={collection.id} value={collection.name}>{collection.name}</option>
-                        )}
+                  <div className='tea-form-item'>
+                    <label htmlFor="collection-name">Collection: </label>
+                    <select className='collection-select' name='collection-name'>
+                      {this.props.collections.map(collection => 
+                        <option key={collection.id} value={collection.name}>{collection.name}</option>
+                      )}
                     </select>
-                    <br/>
+                  </div>
+                  <div className='tea-form-item'>
                     <label htmlFor="teaYear">Year: </label>
                     <input 
+                      className='number-input'
                       name='teaYear' 
                       placeholder="2019" 
+                      type='number'
                      />
-                    <br/>
+                  </div>
+                  <div className='tea-form-item'>
                     <label htmlFor="teaName">Tea Name: </label>
                     <input 
                       name='teaName' 
                       placeholder="tea name" 
+                      size="17"
+                      type='text'
                     />
-                    <br />
+                  </div>
+                  <div className='tea-form-item'>
                     <label htmlFor="vendor">Vendor: </label>
                     <input 
                       name='vendor' 
                       placeholder="vendor"
+                      size="17"
+                      type='text'
                     />
-                    <br />
+                  </div>
+                  <div className='tea-form-item'>
                     <label htmlFor="quantity">Quantity: </label>
                     <input 
+                      className='number-input'
                       name='quantity' 
                       placeholder="quantity" 
+                      type='number'
                     />
-                    <br />
+                  </div>
+                  <div className='tea-form-item'>
                     <label htmlFor="cost">Cost: </label>
                     <input 
+                      className='number-input'
                       name='cost' 
                       placeholder="cost" 
+                      type='number'
                     />
-                    <br />
+                  </div>
+                  <div className='tea-form-item'>
                     <label htmlFor="link">Link: </label>
                     <input 
                       name='link' 
                       placeholder="link" 
+                      size="17"
+                      type='text'
                     />
-                    <br />
-                    <button>Submit</button>
+                  </div>
+                    <button className='tea-submit'>Submit</button>
                 </form>
         </section>
       </main>

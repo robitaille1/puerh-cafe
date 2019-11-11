@@ -7,15 +7,17 @@ function LandingPage() {
       <main className='LandingPage'>
           <section>
             <h1 className='app-name'>PUERH / CAFE</h1>
-            <h2>An all in one place for puerh tea drinkers</h2>
-            <p>A place to keep track of your puerh storage and inventory.</p>
-            <p>Leave tasting and session notes as well.</p>
-            {/* <Link to='/login'>
-              <button>Sign In</button>
-            </Link>
-            <Link to='/signup'>
-              <button>Sign Up</button>
-            </Link> */}
+            <div className='landing-section-description'>
+              <h2>An all in one place for puerh tea drinkers</h2>
+            </div>
+            <div className='landing-section'>
+              <h3>Add a tea to your collection</h3>
+              <p>As your stash grows, keep track of the teas you have by adding new teas, and keeping them organized into collections.</p>
+            </div> 
+            <div className='landing-section'>
+              <h3>Add session and tasting notes to your teas</h3>
+              <p>Teas change. Keep track of how your teas are aging by recording your tasting notes for each session.</p>
+            </div>
             <Link to='/dashboard'>
               <button>Home</button>
             </Link>

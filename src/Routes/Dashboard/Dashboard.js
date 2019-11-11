@@ -10,15 +10,8 @@ import './Dashboard.css'
 import AddCollectionForm from '../../Components/AddCollectionForm/AddCollectionForm'
 
 export default class Dashboard extends React.Component {
+  
   static contextType = ApiContext
-
-  teaDisplay = () => {
-    if(countTeasForCollection <= 1 ){
-      return 'Tea'
-    } else {
-      return 'Teas'
-    }
-  }
 
   handleAddTea = teaId => {
     this.props.history.push(`/tea/${teaId}`)
@@ -34,7 +27,18 @@ export default class Dashboard extends React.Component {
         <section className="container collections">
             <h3>Collections</h3>
             {collections.map(collection => 
-              <div key={collection.id} className="collection"><Link to={`/collection/${collection.id}`}>{collection.name} - {countTeasForCollection(teas, collection.id)} {this.teaDisplay()}</Link></div>
+            <Link className='collection-link' to={`/collection/${collection.id}`}>
+              <div 
+                className='dash-collection-item collection' 
+                key={collection.id}
+              >
+                {collection.name}  
+                <span>
+                 {countTeasForCollection(teas, collection.id)}
+                 {countTeasForCollection(teas, collection.id) === 1? ' Tea' : ' Teas'}
+                </span>
+              </div>
+            </Link>
             )}
             <AddCollectionForm />
         </section>

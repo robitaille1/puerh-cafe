@@ -67,35 +67,44 @@ export default class AddSessionFormTeaPage extends Component {
             <h3 className='section-title'>New Session</h3>
                 <form onSubmit={this.handleSubmit} className='form-container'>
                     <p className='tea-name-session'>{this.props.name}</p>
-                    <br />
-                    <label htmlFor="quantity">Quantity: </label>
-                    <input 
-                      name='quantity' 
-                      placeholder="7g" 
-                      onChange={this.handleFields}
-                      value={this.state.quantity}
-                    />
-                    <br />
-                    <label htmlFor="parameters">Parameters: </label>
-                    <textarea 
-                      name='parameters' 
-                      onChange={this.handleFields}
-                      value={this.state.parameters}
-                    /> 
-                    <br />
-                    <label htmlFor="notes">Tasting Notes: </label>
-                    <textarea name='notes' 
-                      onChange={this.handleFields}
-                      value={this.state.notes}
-                    /> 
-                    <br />
-                    <label htmlFor="rating">Rating: </label>
-                    <input 
-                      name='rating' 
-                      placeholder="rating" 
-                      onChange={this.handleFields}
-                      value={this.state.rating}/>
-                    <br />
+                    <div className='session-form-item'>
+                      <label htmlFor="quantity">Quantity: </label>
+                      <input 
+                        className='number-input'
+                        type='number'
+                        name='quantity' 
+                        placeholder="in grams" 
+                        onChange={this.handleFields}
+                        value={this.state.quantity}
+                      />
+                    </div>
+                    <div className='session-form-item'>
+                      <label htmlFor="parameters">Parameters: </label>
+                      <textarea 
+                        name='parameters' 
+                        placeholder='water temp, steep time etc.. ' 
+                        onChange={this.handleFields}
+                        value={this.state.parameters}
+                        size="17"
+                       /> 
+                    </div>
+                    <div className='session-form-item'>
+                      <label htmlFor="notes">Notes: </label>
+                      <textarea name='notes' 
+                        placeholder='earthy, sweet etc..'
+                        onChange={this.handleFields}
+                        value={this.state.notes}
+                      /> 
+                    </div>
+                    <div className='session-form-item'>
+                      <label htmlFor="rating">Rating: </label>
+                      <input 
+                        className='number-input'
+                        name='rating' 
+                        placeholder="10"
+                        onChange={this.handleFields}
+                        value={this.state.rating}/>
+                    </div>
                     <button>Submit</button>
                 </form>
         </section>

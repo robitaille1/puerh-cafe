@@ -1,8 +1,17 @@
 ul {
     text-align: center;
+    padding: 0px 20px;
   }
   
   li {
-    margin-top: 5px;
+    margin-top: 10px;
     list-style: none;
+    font-size: 15px;
+    border: 1px solid black;
+    padding: 5px;
   }
+
+.tea-item {
+  text-decoration: none;
+  text-align: left;
+}

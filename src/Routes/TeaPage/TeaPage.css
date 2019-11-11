@@ -1,14 +1,30 @@
 .session {
     text-align: left;
-    margin: 10px;
     border: 1px solid black;
     padding: 5px 20px;
+    margin-bottom: 10px;
   }
   
   .bold {
     font-weight: bold;
   }
 
-  .TeaPage {
-    /* padding: 20px 100px; */
+  .tea-info {
+    text-align: left;
+    padding: 0px 30px;
+    border: 1px solid black;
+    font-size: 15px;
+  }
+
+  .btn-div {
+    text-align: center;
+  } 
+
+  .btn-link {
+    text-decoration: none;
+    color: black;
+  }
+
+  .tea-container {
+    padding: 10px;
   }

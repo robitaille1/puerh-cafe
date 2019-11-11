@@ -54,26 +54,36 @@ export default class AddSessionForm extends Component {
         <section className="add">
             <h3 className='section-title'>New Session</h3>
                 <form onSubmit={this.handleSubmit} className='form-container'>
+                  <div className='session-form-item'>
                     <label htmlFor="tea-name">Tea Name: </label>
-                    <select name='tea-name'>
-                        <option value={true} disabled>Pick a tea</option>
-                        {teas.map(tea => 
-                          <option key={tea.id} value={tea.name}>{tea.year} {tea.vendor} - {tea.name}</option>
-                        )}
+                    <select className='tea-select' name='tea-name'>
+                      <option value={true} disabled>Pick a tea</option>
+                      {teas.map(tea => 
+                        <option key={tea.id} value={tea.name}>{tea.year} {tea.vendor} - {tea.name}</option>
+                      )}
                     </select>
-                    <br />
+                  </div>
+                  <div className='session-form-item'>
                     <label htmlFor="quantity">Quantity: </label>
-                    <input name='quantity' placeholder="7g" />
-                    <br />
+                    <input 
+                      type='number'
+                      className='number-input'
+                      name='quantity' 
+                      placeholder="in grams" 
+                    />
+                  </div>
+                  <div className='session-form-item'>
                     <label htmlFor="parameters">Parameters: </label>
-                    <textarea name='parameters'></textarea>   
-                    <br />
-                    <label htmlFor="notes">Tasting Notes: </label>
-                    <textarea name='notes'></textarea> 
-                    <br />
+                    <textarea placeholder='water temp, steep time etc.. ' name='parameters' size="17"></textarea>
+                  </div>
+                  <div className='session-form-item'>
+                    <label htmlFor="notes">Notes: </label>
+                    <textarea placeholder='earthy, sweet etc..' name='notes' size="17"></textarea> 
+                  </div>
+                  <div className='session-form-item'>
                     <label htmlFor="rating">Rating: </label>
-                    <input name='rating' placeholder="rating" />
-                    <br />
+                    <input className='number-input' name='rating' placeholder="10" size="17" />
+                  </div>
                     <button>Submit</button>
                 </form>
         </section>

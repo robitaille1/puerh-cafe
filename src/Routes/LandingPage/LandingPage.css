@@ -4,11 +4,19 @@ button {
     border-radius: 5px;
 }
 
-
 .LandingPage {
     margin-top: 100px;
 }
 
 .app-name {
     font-size: 50px;
+}
+
+.landing-section {
+    text-align: left;
+    padding: 20px 50px;
+}
+
+.landing-section-description {
+    padding: 20px 50px;
 }

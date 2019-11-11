@@ -1,7 +1,3 @@
-.Dashboard {
-  /* padding: 20px 100px; */
-  padding: 20px 10px;
-}
 .collection {
   margin: 10px 5px;
 }
@@ -19,4 +15,15 @@
 
 .section-title {
   text-align: center;
+}
+
+.dash-collection-item {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  padding: 5px 10px;
+}
+
+.collection-link {
+  text-decoration: none;
 }

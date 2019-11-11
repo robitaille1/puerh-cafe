@@ -45,6 +45,7 @@ export default class CollectionPage extends React.Component {
     const { collectionId } = this.props.match.params
     const collectionInfo = getCollection(collections, collectionId) || null
     const collectionTeas = getTeasForCollection(teas, collectionId) || null
+    collectionTeas.sort((a, b) => (a.vendor > b.vendor) ? 1 : -1)
     return (
       <main className='Collection'>
         <Nav />
@@ -56,17 +57,11 @@ export default class CollectionPage extends React.Component {
             )}
             <button onClick={this.handleDeleteCollection}>Delete Collection</button>
             <br />
-            <form onChange={this.handleSort}>
-            <label htmlFor='sort'>Sort:</label>
-              <select name='sort'>
-                <option value={'name'}>Name</option>
-                <option value={'year'}>Year</option>
-                <option value={'vendor'}>Vendor</option>
-              </select>
-            </form>
             <ul>
               {collectionTeas.map(tea => 
-                <li key={tea.id}><Link to={`/tea/${tea.id}`}>{tea.year} {tea.vendor} - {tea.name}</Link></li>
+                <Link key={tea.id} className='tea-item' to={`/tea/${tea.id}`}>
+                  <li>{tea.year} {tea.vendor} - {tea.name}</li>
+                </Link>
               )}
             </ul>
         </section>

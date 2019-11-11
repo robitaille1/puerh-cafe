@@ -1,6 +1,7 @@
 import React from 'react'
 import ApiContext from '../../Context/ApiContext'
 import config from '../../config'
+import './AddCollectionForm.css'
 
 export default class AddCollectionForm extends React.Component  {
     static defaultProps = {
@@ -49,12 +50,14 @@ export default class AddCollectionForm extends React.Component  {
     return (
       <main className='AddCollectionForm'>
         <form onSubmit={this.handleSubmit}>
-            <label htmlFor='name'>Add New Collection: </label>
+            <label className='add-collection-label' htmlFor='name'>Add New Collection </label>
+            <br />
             <input 
               type='text' 
               name='name'
               onChange={this.handleFields}
               value={this.state.name} 
+              size="17"
             />
             <button type='submit'>Submit</button>
         </form>

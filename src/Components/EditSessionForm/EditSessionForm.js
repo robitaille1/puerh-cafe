@@ -91,23 +91,26 @@ export default class EditSessionForm extends Component {
         <main className='AddSessionForm'>
         <Nav />
         <section className="add">
-            <h3 className='section-title'>New Session</h3>
+            <h3 className='section-title'>Edit Session</h3>
                 <form onSubmit={this.handleSubmit} className='form-container'>
                     <label htmlFor="tea-name">Tea Name: </label>
                     <p>{name}</p>
-                    <br />
-                    <label htmlFor="quantity">Quantity: </label>
-                    <input name='quantity' value={quantity} onChange={this.handleChangeQuantity} />
-                    <br />
-                    <label htmlFor="parameters">Parameters: </label>
-                    <textarea name='parameters' id='parameters' value={parameters} onChange={this.handleChangeParameters}></textarea>   
-                    <br />
-                    <label htmlFor="notes">Tasting Notes: </label>
-                    <textarea name='notes' id='notes' value={notes} onChange={this.handleChangeNotes}></textarea> 
-                    <br />
-                    <label htmlFor="rating">Rating: </label>
-                    <input name='rating'  value={rating} onChange={this.handleChangeRating} />
-                    <br />
+                    <div className='session-form-item'>
+                      <label htmlFor="quantity">Quantity: </label>
+                      <input name='quantity' type='number' value={quantity} onChange={this.handleChangeQuantity} className='number-input'/>
+                    </div>
+                    <div className='session-form-item'>
+                      <label htmlFor="parameters">Parameters: </label>
+                      <textarea name='parameters' id='parameters' value={parameters} onChange=  {this.handleChangeParameters}></textarea>
+                    </div>
+                    <div className='session-form-item'>
+                      <label htmlFor="notes">Notes: </label>
+                      <textarea name='notes' id='notes' value={notes} onChange={this.handleChangeNotes}></textarea>
+                    </div>
+                    <div className='session-form-item'>
+                      <label htmlFor="rating">Rating: </label>
+                      <input name='rating' type='number' value={rating} onChange={this.handleChangeRating} className='number-input'/>
+                    </div>
                     <button>Submit</button>
                     <button type='button' onClick={this.handleClickCancel}>Cancel</button>
                 </form>
