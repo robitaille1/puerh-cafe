@@ -14,9 +14,47 @@ button {
 
 .landing-section {
     text-align: left;
-    padding: 20px 50px;
+    padding: 10px 50px;
+    background-color: lightgrey;
+    border: none;
+}
+
+.landing-section h3 {
+    color: black;
+}
+
+.landing-section p {
+    color: black;
 }
 
 .landing-section-description {
     padding: 20px 50px;
+    height: 40vh;
+}
+
+.landing-div {
+    padding: 0px 5%;
+}
+
+.landing-section-cont {
+    padding: 0px 5%;
+}
+
+@media screen and (min-width: 480px) {
+    .landing-div {
+        padding: 0px 10%;
+    }
+    .landing-section-cont {
+        padding: 0px 10%;
+    }
+    
+}
+  
+@media screen and (min-width: 700px) {
+    .landing-div {
+        padding: 0px 20%;
+    }
+    .landing-section-cont {
+        padding: 0px 20%;
+    }
 }

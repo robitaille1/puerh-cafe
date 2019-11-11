@@ -35,14 +35,14 @@ class SessionItem extends Component {
     render() {
         return(
             <div name='session-item' key={this.props.session.id} className="session">
-              <p><span className="bold">Quantity:</span> {this.props.session.quantity}</p>
-              <p><span className="bold">Parameters:</span> {this.props.session.parameters}</p>
-              <p><span className="bold">Tasting Notes:</span> {this.props.session.notes}</p>
-              <p><span className="bold">Rating:</span> {this.props.session.rating}</p>
+              <p><span className="bold">Quantity:</span> <span className='session-desc'>{this.props.session.quantity}</span></p>
+              <p><span className="bold">Parameters:</span> <br/><span className='session-desc'>{this.props.session.parameters}</span></p>
+              <p><span className="bold">Tasting Notes:</span> <br/><span className='session-desc'>{this.props.session.notes}</span> </p>
+              <p><span className="bold">Rating:</span> <span className='session-desc'>{this.props.session.rating}</span></p>
               <br/>
               <div className='btn-div'>
-              <button onClick={this.handleDeleteSession}>Delete Session</button>
-              <button><Link className='edit-session-btn' to={`/edit/session/${this.props.session.id}`}>Edit Session</Link></button>
+              <button className='btn-class' onClick={this.handleDeleteSession}>Delete Session</button>
+              <button className='btn-class'><Link className='edit-session-btn' to={`/edit/session/${this.props.session.id}`}>Edit Session</Link></button>
               </div>
             </div>
         )

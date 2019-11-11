@@ -33,7 +33,7 @@ export default class Dashboard extends React.Component {
                 className='dash-collection-item collection' 
               >
                 {collection.name}  
-                <span>
+                <span className='span-class'>
                  {countTeasForCollection(teas, collection.id)}
                  {countTeasForCollection(teas, collection.id) === 1? ' Tea' : ' Teas'}
                 </span>

@@ -107,7 +107,7 @@ export default class AddSessionFormTeaPage extends Component {
                         onChange={this.handleFields}
                         value={this.state.rating}/>
                     </div>
-                    <button>Submit</button>
+                    <button className='btn-class'>Submit</button>
                 </form>
         </section>
       </main>

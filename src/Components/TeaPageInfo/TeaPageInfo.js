@@ -11,7 +11,7 @@ class TeaPageInfo extends Component {
                 <a href={`${this.props.tea.link}`}>Link</a>
                 <p><Link to={`/collection/${this.props.tea.collectionid}`}>Back to Collection</Link></p>
                 <br />
-                <button onClick={this.handleDeleteTea}>Delete Tea</button>
+                <button className='btn-class' onClick={this.handleDeleteTea}>Delete Tea</button>
             </div>
         )
     }

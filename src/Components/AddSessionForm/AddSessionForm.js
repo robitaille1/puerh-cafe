@@ -57,9 +57,9 @@ export default class AddSessionForm extends Component {
                   <div className='session-form-item'>
                     <label htmlFor="tea-name">Tea Name: </label>
                     <select className='tea-select' name='tea-name'>
-                      <option value={true} disabled>Pick a tea</option>
+                      <option className='option' value={true} disabled>Pick a tea</option>
                       {teas.map(tea => 
-                        <option key={tea.id} value={tea.name}>{tea.year} {tea.vendor} - {tea.name}</option>
+                        <option className='option' key={tea.id} value={tea.name}>{tea.year} {tea.vendor} - {tea.name}</option>
                       )}
                     </select>
                   </div>
@@ -84,7 +84,7 @@ export default class AddSessionForm extends Component {
                     <label htmlFor="rating">Rating: </label>
                     <input className='number-input' name='rating' placeholder="10" size="17" />
                   </div>
-                    <button>Submit</button>
+                    <button className='btn-class'>Submit</button>
                 </form>
         </section>
       </main>

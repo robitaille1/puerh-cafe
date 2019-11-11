@@ -1,17 +1,26 @@
+button {
+  border-radius: 5px;
+}
+
 .collection {
   margin: 10px 5px;
+  background-color: lightgrey;
+  border: 1px solid rgba(170, 168, 168, 0.507);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(100, 100, 100, 0.199);
 }
   
 .add {
-  /* padding: 10px 80px; */
-  border: 1px solid black;
   margin-top: 20px;
-  /* text-align: left */
 }
 
 .collections {
-  border: 1px solid black;
   padding: 0px 5%;
+  /* background-color: rgb(250, 246, 209);
+  border: 5px solid burlywood; */
+  background-color: #16183e;
+  border-radius: 10px;
+  /* box-shadow: 0 0 15px rgba(138, 137, 137, 0.199); */
 }
 
 .section-title {
@@ -21,8 +30,15 @@
 .dash-collection-item {
   display: flex;
   justify-content: space-between;
-  border: 1px solid black;
+  border: 1px solid rgba(170, 168, 168, 0.507);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(138, 137, 137, 0.199);
   padding: 5px 10px;
+  color: black;
+}
+
+.span-class {
+  color: black;
 }
 
 .collection-link {
@@ -31,7 +47,6 @@
 
 .container-div {
   padding: 100px 5%;
-  
 }
 
 @media screen and (min-width: 480px) {

@@ -3,10 +3,11 @@
 }
 
 .tea-info {
-  text-align: left;
-  padding: 0px 5%;
-  border: 1px solid black;
+  text-align: center;
+  padding: 10px 5%;
   font-size: 15px;
+  background-color: #16183e;
+  border-radius: 10px;
 }
 
 .btn-div {
@@ -15,26 +16,61 @@
 
 .btn-link {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 .tea-quantity, .tea-cost {
   margin-top: 0;
   margin-bottom: 5px;
+  display: inline-block;
 }
 
-.collection-link {
-  text-decoration: none;
+.tea-cost {
+  margin-left: 10px;
 }
+
+.collection-link-tea {
+  text-decoration: none;
+  color: white;
+  background-color: #121329;
+  border: 1px solid #0c0d1b;
+  border-radius: 10px;
+  padding: 6px 15px;
+  opacity: 0.8;
+  transition: 0.5s;
+  margin-bottom: 15px;
+}
+
+.collection-link-tea:hover {
+  opacity: 1;
+}
+
 
 .tea-link {
   text-decoration: none;
+  color: rgba(243, 99, 99, 0.699);
+  display: block;
 }
 
+.tea-link:hover {
+  text-decoration: none;
+  color: rgba(250, 0, 0, 0.699);
+}
+
+.tea-sessions {
+  margin-top: 20px;
+  background-color: #16183e;
+  border-radius: 10px;
+  padding-top: 10px;
+}
+
+.tea-name-div {
+  text-align: center;
+}
 
 @media screen and (min-width: 480px) {
   .tea-info {
-    padding: 0px 10%;
+    padding: 10px 10%;
     font-size: 17px;
   }
   .tea-name {
@@ -44,7 +80,7 @@
 
 @media screen and (min-width: 700px) {
   .tea-info {
-    padding: 0px 20%;
+    padding: 10px 20%;
   }
   .tea-name {
     font-size: 25px;

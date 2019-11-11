@@ -2,6 +2,7 @@ import React from 'react'
 import { getSession} from '../../collections-helpers'
 import ApiContext from '../../Context/ApiContext'
 import EditSessionForm from '../../Components/EditSessionForm/EditSessionForm'
+import Nav from '../../Components/Nav/Nav'
 
 
 export default class EditSession extends React.Component {
@@ -32,6 +33,7 @@ export default class EditSession extends React.Component {
     const sessionInfo = getSession(sessions, sessionId)
     return (
       <main className='TeaPage'>
+        <Nav />
         <div className='container-div'>
           {sessionInfo.map(session => 
             <EditSessionForm onCancel={this.handleCancelSession} onSubmitEdit={this.onEditSession} id={session.id} key={session.id} session={session} />

@@ -9,6 +9,28 @@
     padding-top: 0px;
 }
 
+.recent-teas-div {
+    margin-top: 20px;
+    background-color: #16183e;
+    border-radius: 10px;
+}
+
+.recent-tea-link {
+    text-decoration: none;
+    color: black;
+}
+
+.recent-tea-name {
+    background-color: lightgrey;
+    border: 1px solid rgba(170, 168, 168, 0.507);
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(100, 100, 100, 0.199);
+    padding: 5px;
+    margin: 10px;
+    color: black;
+    font-weight: normal;
+}
+
 @media screen and (min-width: 480px) {
     .recent-tea {
         font-size: 15px;

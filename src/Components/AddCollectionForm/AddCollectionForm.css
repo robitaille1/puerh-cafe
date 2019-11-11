@@ -5,4 +5,21 @@
 
 .collection-input {
     border: 1px solid grey;
+    border-radius: 5px;
+    height: 25px;
+}
+
+.btn-class:hover {
+    opacity: 1;
+}
+
+.btn-class {
+  border: none;
+  color: white;
+  background-color: #121329;
+  border: 1px solid #0c0d1b;
+  padding: 6px 20px;
+  opacity: 0.8;
+  transition: 0.5s;
+  margin-bottom: 15px;
 }

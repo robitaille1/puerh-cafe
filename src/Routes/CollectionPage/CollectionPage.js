@@ -48,20 +48,20 @@ export default class CollectionPage extends React.Component {
     collectionTeas.sort((a, b) => (a.vendor > b.vendor) ? 1 : -1)
     return (
       <main className='Collection'>
-        <div className='container-div'>
         <Nav />
+        <div className='container-div'>
         {collectionInfo.length === 0 ? 
         <CollectionError /> : 
         <section className="container">
             {collectionInfo.map(collection =>
-              <h3 key={collection.id}>Collection: {collection.name}</h3>
+              <h3 className='collection-header' key={collection.id}>Collection: {collection.name}</h3>
             )}
-            <button onClick={this.handleDeleteCollection}>Delete Collection</button>
+            <button className='btn-class' onClick={this.handleDeleteCollection}>Delete Collection</button>
             <br />
             <ul>
               {collectionTeas.map(tea => 
                 <Link key={tea.id} className='tea-item' to={`/tea/${tea.id}`}>
-                  <li>{tea.year} {tea.vendor} - {tea.name}</li>
+                  <li className='collection-itm'>{tea.year} {tea.vendor} - {tea.name}</li>
                 </Link>
               )}
             </ul>

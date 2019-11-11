@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import config from '../../config'
 import ApiContext from '../../Context/ApiContext'
-import Nav from '../Nav/Nav'
 
 export default class EditTeaForm extends Component {
   static defaultProps = {
@@ -102,7 +101,6 @@ export default class EditTeaForm extends Component {
     const { year, name, vendor, quantity, cost, link } = this.state
     return (
       <main className='AddTeaForm'>
-        <Nav/>
         <section className="add">
             <h3 className='section-title'>Edit Tea</h3>
                 <form onSubmit={this.handleSubmit} className='form-container'>
@@ -131,8 +129,8 @@ export default class EditTeaForm extends Component {
                       <input name='link' value={link} onChange={this.handleChangeLink} />
                     </div>
                     <div className='btn-div'>
-                      <button>Submit</button>
-                      <button type='button' onClick={this.handleClickCancel}>Cancel</button>
+                      <button className='btn-class'>Submit</button>
+                      <button type='button' onClick={this.handleClickCancel} className='btn-class'>Cancel</button>
                     </div>
                 </form>
         </section>

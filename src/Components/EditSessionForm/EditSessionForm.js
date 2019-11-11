@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import config from '../../config'
 import ApiContext from '../../Context/ApiContext'
-import Nav from '../Nav/Nav'
 
 export default class EditSessionForm extends Component {
   static defaultProps = {
@@ -89,7 +88,6 @@ export default class EditSessionForm extends Component {
     const { name, quantity, parameters, notes, rating } = this.state
     return (
         <main className='AddSessionForm'>
-        <Nav />
         <section className="add">
             <h3 className='section-title'>Edit Session</h3>
                 <form onSubmit={this.handleSubmit} className='form-container'>
@@ -111,8 +109,8 @@ export default class EditSessionForm extends Component {
                       <input name='rating' type='number' value={rating} onChange={this.handleChangeRating} className='number-input'/>
                     </div>
                     <div className='btn-div'>
-                      <button>Submit</button>
-                      <button type='button' onClick={this.handleClickCancel}>Cancel</button>
+                      <button className='btn-class'>Submit</button>
+                      <button type='button' onClick={this.handleClickCancel} className='btn-class'>Cancel</button>
                     </div>
                 </form>
         </section>

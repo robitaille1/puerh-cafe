@@ -1,13 +1,18 @@
 .session {
     text-align: left;
-    border: 1px solid black;
-    padding: 5px 5%;
-    margin-bottom: 10px;
+    padding: 10px 5%;
+    background-color: #16183e;
+    border-bottom: 1px solid #090a1b;
+    border-radius: 5px;
 }
 
 .edit-session-btn {
     text-decoration: none;
-    color: black;
+    color: white;
+}
+
+.session-desc {
+    color: rgb(168, 167, 167);
 }
 
 @media screen and (min-width: 480px) {

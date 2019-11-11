@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
 }
 
 body {
@@ -8,8 +10,5 @@ body {
   font-size: 20px;
   text-align: center;
   line-height: 1.5;
+  background-color: #121329;
 }
-
-/* input {
- border: .5px solid rgb(63, 63, 63);
-} */

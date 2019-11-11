@@ -7,6 +7,10 @@ label {
 input, textarea, select {
     text-align: left;
     border: 1px solid grey;
+    border-radius: 5px;
+    width: 152px;
+    background-color: lightgrey;
+    color: black;
 }
 
 input.tea-submit  {
@@ -15,10 +19,13 @@ input.tea-submit  {
 
 .add {
     padding: 0px 5%;
+    background-color: #16183e;
+    border-radius: 10px;
 }
 
 .collection-select {
     width: 152px;
+    color: black;
 }
 
 .tea-form-item {
@@ -30,6 +37,10 @@ input.tea-submit  {
 .number-input {
     width: 152px;
     border: 1px solid grey;
+}
+
+.option {
+    color: black;
 }
 
 @media screen and (min-width: 480px) {

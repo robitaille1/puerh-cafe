@@ -57,7 +57,7 @@ export default class AddTeaForm extends Component {
                     <label htmlFor="collection-name">Collection: </label>
                     <select className='collection-select' name='collection-name'>
                       {this.props.collections.map(collection => 
-                        <option key={collection.id} value={collection.name}>{collection.name}</option>
+                        <option className='option' key={collection.id} value={collection.name}>{collection.name}</option>
                       )}
                     </select>
                   </div>
@@ -115,7 +115,7 @@ export default class AddTeaForm extends Component {
                       type='text'
                     />
                   </div>
-                    <button className='tea-submit'>Submit</button>
+                    <button className='tea-submit btn-class'>Submit</button>
                 </form>
         </section>
       </main>

@@ -52,32 +52,34 @@ export default class TeaPage extends React.Component {
     const teaSessions = getSessionsForTea(sessions, teaId)
     return (
       <main className='TeaPage'>
-        <div className='container-div'>
         <Nav />
+        <div className='container-div'>
         {teaInfo.length === 0 ? 
           <TeaError/> :
           <div>
             <section className="container tea-info">
               {teaInfo.map(tea =>
                 <div key={tea.id}>
-                  <h3 className='tea-name'>{tea.year} {tea.vendor} - {tea.name}</h3>
+                  <div className='tea-name-div'>
+                    <h3 className='tea-name'>{tea.year} {tea.vendor} - {tea.name}</h3>
+                  </div>
                   <h4 className='tea-quantity'>{tea.quantity}g</h4>
                   <h5 className='tea-cost'>Purchased for: ${tea.cost}.00</h5>
                   <a href={`${tea.link}`} className='tea-link'>Link</a>
                   <div className='btn-div'>
-                    <p><Link className='collection-link' to={`/collection/${tea.collectionid}`}>Back to Collection</Link></p>
-                    <button onClick={this.handleDeleteTea}>Delete Tea</button>
-                    <button><Link className='btn-link' to={`/edit/tea/${tea.id}`}>Edit Tea</Link></button> 
+                    <p><Link className='collection-link-tea' to={`/collection/${tea.collectionid}`}>Back to Collection</Link></p>
+                    <button className='btn-class' onClick={this.handleDeleteTea}>Delete Tea</button>
+                    <button className='btn-class'><Link className='btn-link' to={`/edit/tea/${tea.id}`}>Edit Tea</Link></button> 
                   </div>
                 </div>
               )}
             </section>
-            <section>
+            {teaSessions.length > 0 ? <section className='tea-sessions'>
               <h3>Sessions:</h3>
               {teaSessions.map(session =>
                 <SessionItem session={session} key={session.id}/>
               )}
-            </section>
+            </section> : null }
             <section>
               {teaInfo.map(tea => 
                 <AddSessionTeaPage key={tea.id} name={tea.name} id={tea.id}/>

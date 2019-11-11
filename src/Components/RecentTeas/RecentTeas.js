@@ -12,18 +12,20 @@ export default class RecentTeas extends Component {
     teas.sort((a, b) => (a.id < b.id) ? 1 : -1)
     return (
       <main className='RecentTeas'>
-        <h3 className='recent-tea-header'>Recently Added Teas</h3>
-        <section className='recent-tea'>
+        <div className='recent-teas-div'>
+          <h3 className='recent-tea-header'>Recently Added Teas</h3>
+          <section className='recent-tea'>
             {teas.slice(0, 5).map(tea => 
-                <Link to={`/tea/${tea.id}`} key={tea.id}>
-                    <h4>{tea.year} {tea.name}</h4>
+                <Link className='recent-tea-link' to={`/tea/${tea.id}`} key={tea.id}>
+                    <h4 className='recent-tea-name'>{tea.year} {tea.name}</h4>
                 </Link>
             )}
-            
-        </section>
+          </section>
         <Link to={`/all/tea`}>
-          <button>View All Teas</button>
+          <button className='btn-class'>View All Teas</button>
         </Link>
+        </div>
+        
       </main>
     );
   }
