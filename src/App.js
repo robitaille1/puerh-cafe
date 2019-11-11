@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom'
 import './App.css'
 import LandingPage from './Routes/LandingPage/LandingPage'
-// import SignUpForm from './Components/SignUpForm/SignUpForm'
-// import LoginForm from './Components/LoginForm/LoginForm'
 import Dashboard from './Routes/Dashboard/Dashboard'
 import CollectionPage from './Routes/CollectionPage/CollectionPage'
 import TeaPage from './Routes/TeaPage/TeaPage'
@@ -189,8 +187,6 @@ class App extends Component {
       <ApiContext.Provider value={value}>
         <main className='App'>
           <Route exact path='/' component={LandingPage}/>
-          {/* <Route path='/signup' component={SignUpForm}/>
-          <Route path='/login' component={LoginForm} /> */}
           <Route path='/dashboard' component={Dashboard} />
           <Route exact path='/all/tea' component={AllTea} />
           {this.renderCollectionRoutes()}
