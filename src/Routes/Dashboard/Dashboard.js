@@ -24,13 +24,13 @@ export default class Dashboard extends React.Component {
     return (
       <main className='Dashboard'>
         <Nav />
+        <div className='container-div'>
         <section className="container collections">
             <h3>Collections</h3>
             {collections.map(collection => 
-            <Link className='collection-link' to={`/collection/${collection.id}`}>
+            <Link className='collection-link' key={collection.id} to={`/collection/${collection.id}`}>
               <div 
                 className='dash-collection-item collection' 
-                key={collection.id}
               >
                 {collection.name}  
                 <span>
@@ -45,6 +45,7 @@ export default class Dashboard extends React.Component {
         <RecentTeas />
         <AddTeaForm onAddTea={this.handleAddTea} collections={collections}/>
         <AddSessionForm onAddTea={this.handleAddTea} />
+        </div>
       </main>
     );
   }

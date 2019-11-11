@@ -58,6 +58,7 @@ export default class AddCollectionForm extends React.Component  {
               onChange={this.handleFields}
               value={this.state.name} 
               size="17"
+              className='collection-input'
             />
             <button type='submit'>Submit</button>
         </form>

@@ -4,4 +4,24 @@
 
 .session-form-item {
     margin-bottom: 15px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.session-area {
+    resize: none;
+}
+
+@media screen and (min-width: 480px) {
+    
+}
+  
+@media screen and (min-width: 1044px) {
+    .tea-select {
+        width: 250px;
+    }
+    .session-area {
+        width: 250px;
+        height: 150px;
+    }
 }

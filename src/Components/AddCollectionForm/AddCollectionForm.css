@@ -2,3 +2,7 @@
 .add-collection-label{
     float: none;
 }
+
+.collection-input {
+    border: 1px solid grey;
+}

@@ -1,0 +1,23 @@
+.session {
+    text-align: left;
+    border: 1px solid black;
+    padding: 5px 5%;
+    margin-bottom: 10px;
+}
+
+.edit-session-btn {
+    text-decoration: none;
+    color: black;
+}
+
+@media screen and (min-width: 480px) {
+    .session {
+        padding: 0px 10%;
+    }
+}
+  
+@media screen and (min-width: 700px) {
+    .session {
+        padding: 0px 20%;
+    }
+}

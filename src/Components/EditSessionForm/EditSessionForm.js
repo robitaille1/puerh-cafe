@@ -93,26 +93,27 @@ export default class EditSessionForm extends Component {
         <section className="add">
             <h3 className='section-title'>Edit Session</h3>
                 <form onSubmit={this.handleSubmit} className='form-container'>
-                    <label htmlFor="tea-name">Tea Name: </label>
-                    <p>{name}</p>
+                    <p className='tea-name-session'>{name}</p>
                     <div className='session-form-item'>
                       <label htmlFor="quantity">Quantity: </label>
                       <input name='quantity' type='number' value={quantity} onChange={this.handleChangeQuantity} className='number-input'/>
                     </div>
                     <div className='session-form-item'>
                       <label htmlFor="parameters">Parameters: </label>
-                      <textarea name='parameters' id='parameters' value={parameters} onChange=  {this.handleChangeParameters}></textarea>
+                      <textarea name='parameters' id='parameters' value={parameters} onChange=  {this.handleChangeParameters} className='session-area'></textarea>
                     </div>
                     <div className='session-form-item'>
                       <label htmlFor="notes">Notes: </label>
-                      <textarea name='notes' id='notes' value={notes} onChange={this.handleChangeNotes}></textarea>
+                      <textarea name='notes' id='notes' value={notes} onChange={this.handleChangeNotes} className='session-area'></textarea>
                     </div>
                     <div className='session-form-item'>
                       <label htmlFor="rating">Rating: </label>
                       <input name='rating' type='number' value={rating} onChange={this.handleChangeRating} className='number-input'/>
                     </div>
-                    <button>Submit</button>
-                    <button type='button' onClick={this.handleClickCancel}>Cancel</button>
+                    <div className='btn-div'>
+                      <button>Submit</button>
+                      <button type='button' onClick={this.handleClickCancel}>Cancel</button>
+                    </div>
                 </form>
         </section>
       </main>

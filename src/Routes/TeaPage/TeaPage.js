@@ -52,19 +52,20 @@ export default class TeaPage extends React.Component {
     const teaSessions = getSessionsForTea(sessions, teaId)
     return (
       <main className='TeaPage'>
+        <div className='container-div'>
         <Nav />
         {teaInfo.length === 0 ? 
           <TeaError/> :
-          <div className='tea-container'>
+          <div>
             <section className="container tea-info">
               {teaInfo.map(tea =>
                 <div key={tea.id}>
-                  <h3>{tea.year} {tea.vendor} - {tea.name}</h3>
-                  <h4>{tea.quantity}g</h4>
-                  <h5>Purchased for: ${tea.cost}.00</h5>
-                  <a href={`${tea.link}`}>Link</a>
-                  <p><Link to={`/collection/${tea.collectionid}`}>Back to Collection</Link></p>
+                  <h3 className='tea-name'>{tea.year} {tea.vendor} - {tea.name}</h3>
+                  <h4 className='tea-quantity'>{tea.quantity}g</h4>
+                  <h5 className='tea-cost'>Purchased for: ${tea.cost}.00</h5>
+                  <a href={`${tea.link}`} className='tea-link'>Link</a>
                   <div className='btn-div'>
+                    <p><Link className='collection-link' to={`/collection/${tea.collectionid}`}>Back to Collection</Link></p>
                     <button onClick={this.handleDeleteTea}>Delete Tea</button>
                     <button><Link className='btn-link' to={`/edit/tea/${tea.id}`}>Edit Tea</Link></button> 
                   </div>
@@ -84,6 +85,7 @@ export default class TeaPage extends React.Component {
             </section>
           </div>
         }
+        </div>
       </main>
     );
   }

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import config from '../../config'
 import { Link } from 'react-router-dom'
 import ApiContext from '../../Context/ApiContext'
+import './SessionItem.css'
 
 class SessionItem extends Component {
     static defaultProps ={
@@ -39,8 +40,10 @@ class SessionItem extends Component {
               <p><span className="bold">Tasting Notes:</span> {this.props.session.notes}</p>
               <p><span className="bold">Rating:</span> {this.props.session.rating}</p>
               <br/>
+              <div className='btn-div'>
               <button onClick={this.handleDeleteSession}>Delete Session</button>
-              <button><Link to={`/edit/session/${this.props.session.id}`}>Edit Session</Link></button>
+              <button><Link className='edit-session-btn' to={`/edit/session/${this.props.session.id}`}>Edit Session</Link></button>
+              </div>
             </div>
         )
     }

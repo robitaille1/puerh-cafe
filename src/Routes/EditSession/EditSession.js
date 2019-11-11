@@ -32,9 +32,11 @@ export default class EditSession extends React.Component {
     const sessionInfo = getSession(sessions, sessionId)
     return (
       <main className='TeaPage'>
+        <div className='container-div'>
           {sessionInfo.map(session => 
             <EditSessionForm onCancel={this.handleCancelSession} onSubmitEdit={this.onEditSession} id={session.id} key={session.id} session={session} />
           )}
+        </div>
       </main>
     );
   }

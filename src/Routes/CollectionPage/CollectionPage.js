@@ -48,6 +48,7 @@ export default class CollectionPage extends React.Component {
     collectionTeas.sort((a, b) => (a.vendor > b.vendor) ? 1 : -1)
     return (
       <main className='Collection'>
+        <div className='container-div'>
         <Nav />
         {collectionInfo.length === 0 ? 
         <CollectionError /> : 
@@ -66,6 +67,7 @@ export default class CollectionPage extends React.Component {
             </ul>
         </section>
         }
+        </div>
       </main>
     );
   }

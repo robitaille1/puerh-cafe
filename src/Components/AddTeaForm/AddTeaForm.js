@@ -52,7 +52,7 @@ export default class AddTeaForm extends Component {
       <main className='AddTeaForm'>
         <section className="add">
             <h3 className='section-title'>Add A Tea</h3>
-                <form onSubmit={this.handleSubmit} className='form-container'>
+                <form onSubmit={this.handleSubmit} className='form-container add-tea-form'>
                   <div className='tea-form-item'>
                     <label htmlFor="collection-name">Collection: </label>
                     <select className='collection-select' name='collection-name'>
@@ -68,7 +68,7 @@ export default class AddTeaForm extends Component {
                       name='teaYear' 
                       placeholder="2019" 
                       type='number'
-                     />
+                    />
                   </div>
                   <div className='tea-form-item'>
                     <label htmlFor="teaName">Tea Name: </label>

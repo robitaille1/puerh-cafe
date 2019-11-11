@@ -86,6 +86,7 @@ export default class AddSessionFormTeaPage extends Component {
                         onChange={this.handleFields}
                         value={this.state.parameters}
                         size="17"
+                        className='session-area'
                        /> 
                     </div>
                     <div className='session-form-item'>
@@ -94,6 +95,7 @@ export default class AddSessionFormTeaPage extends Component {
                         placeholder='earthy, sweet etc..'
                         onChange={this.handleFields}
                         value={this.state.notes}
+                        className='session-area'
                       /> 
                     </div>
                     <div className='session-form-item'>

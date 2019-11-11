@@ -11,6 +11,7 @@
 
 .collections {
   border: 1px solid black;
+  padding: 0px 5%;
 }
 
 .section-title {
@@ -26,4 +27,27 @@
 
 .collection-link {
   text-decoration: none;
+}
+
+.container-div {
+  padding: 100px 5%;
+  
+}
+
+@media screen and (min-width: 480px) {
+  .collections {
+    padding: 0px 10%;
+  }
+  .container-div {
+    padding: 100px 10%;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .collections {
+    padding: 0px 20%;
+  }
+  .container-div {
+    padding: 100px 20%;
+  }
 }

@@ -1,0 +1,35 @@
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 0px 5%;
+  }
+  
+  .navbar .nav-link {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 5px 5px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+.nav-company {
+    text-decoration: none;
+    color: white;
+}
+
+  @media screen and (min-width: 480px) {
+    .navbar {
+      padding: 0px 10%;
+    }
+  }
+  
+  @media screen and (min-width: 700px) {
+    .navbar {
+        padding: 0px 20%;
+    }
+  }

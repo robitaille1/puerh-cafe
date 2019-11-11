@@ -1,10 +1,22 @@
-.recent-tea-header{
+.recent-tea-header {
     margin-bottom: 5px;
 }
 
-.recent-tea{
+.recent-tea {
     text-align: center;
     font-size: 12px;
     padding: 10px 40px;
     padding-top: 0px;
+}
+
+@media screen and (min-width: 480px) {
+    .recent-tea {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .recent-tea {
+        font-size: 20px;
+    }
 }

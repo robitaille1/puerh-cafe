@@ -28,9 +28,11 @@ export default class EditSession extends React.Component {
     const teaInfo = getTea(teas, teaId)
     return (
       <main className='TeaPage'>
+        <div className='container-div'>
           {teaInfo.map(tea => 
             <EditTeaForm onCancel={this.handleCancel} onSubmitEdit={this.onEditTea} key={tea.id} id={tea.id} tea={tea} />
           )}
+        </div>
       </main>
     );
   }

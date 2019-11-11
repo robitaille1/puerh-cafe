@@ -106,27 +106,34 @@ export default class EditTeaForm extends Component {
         <section className="add">
             <h3 className='section-title'>Edit Tea</h3>
                 <form onSubmit={this.handleSubmit} className='form-container'>
-                    <br/>
-                    <label htmlFor="tea-year">Year: </label>
-                    <input name='tea-year' value={year} onChange={this.handleChangeYear}/>
-                    <br/>
-                    <label htmlFor="tea-name">Tea Name: </label>
-                    <input name='tea-name' value={name} onChange={this.handleChangeName}/>
-                    <br />
-                    <label htmlFor="vendor">Vendor: </label>
-                    <input name='vendor' value={vendor} onChange={this.handleChangeVendor} />
-                    <br />
-                    <label htmlFor="quantity">Quantity: </label>
-                    <input name='quantity' value={quantity} onChange={this.handleChangeQuantity} />
-                    <br />
-                    <label htmlFor="cost">Cost: </label>
-                    <input name='cost' value={cost} onChange={this.handleChangeCost} />
-                    <br />
-                    <label htmlFor="link">Link: </label>
-                    <input name='link' value={link} onChange={this.handleChangeLink} />
-                    <br />
-                    <button>Submit</button>
-                    <button type='button' onClick={this.handleClickCancel}>Cancel</button>
+                    <div className='tea-form-item'>
+                      <label htmlFor="tea-year">Year: </label>
+                      <input name='tea-year' value={year} onChange={this.handleChangeYear}/>
+                    </div>
+                    <div className='tea-form-item'>
+                      <label htmlFor="tea-name">Tea Name: </label>
+                      <input name='tea-name' value={name} onChange={this.handleChangeName}/>
+                    </div>
+                    <div className='tea-form-item'>
+                      <label htmlFor="vendor">Vendor: </label>
+                      <input name='vendor' value={vendor} onChange={this.handleChangeVendor} />
+                    </div>
+                    <div className='tea-form-item'>
+                      <label htmlFor="quantity">Quantity: </label>
+                      <input name='quantity' value={quantity} onChange={this.handleChangeQuantity} />
+                    </div>
+                    <div className='tea-form-item'>
+                      <label htmlFor="cost">Cost: </label>
+                      <input name='cost' value={cost} onChange={this.handleChangeCost} />
+                    </div>
+                    <div className='tea-form-item'>
+                      <label htmlFor="link">Link: </label>
+                      <input name='link' value={link} onChange={this.handleChangeLink} />
+                    </div>
+                    <div className='btn-div'>
+                      <button>Submit</button>
+                      <button type='button' onClick={this.handleClickCancel}>Cancel</button>
+                    </div>
                 </form>
         </section>
       </main>
