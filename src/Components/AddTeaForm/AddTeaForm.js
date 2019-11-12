@@ -68,6 +68,7 @@ export default class AddTeaForm extends Component {
                       name='teaYear' 
                       placeholder="2019" 
                       type='number'
+                      required
                     />
                   </div>
                   <div className='tea-form-item'>
@@ -77,6 +78,7 @@ export default class AddTeaForm extends Component {
                       placeholder="tea name" 
                       size="17"
                       type='text'
+                      required
                     />
                   </div>
                   <div className='tea-form-item'>
@@ -86,6 +88,7 @@ export default class AddTeaForm extends Component {
                       placeholder="vendor"
                       size="17"
                       type='text'
+                      required
                     />
                   </div>
                   <div className='tea-form-item'>
@@ -95,6 +98,7 @@ export default class AddTeaForm extends Component {
                       name='quantity' 
                       placeholder="quantity" 
                       type='number'
+                      required
                     />
                   </div>
                   <div className='tea-form-item'>
@@ -104,6 +108,7 @@ export default class AddTeaForm extends Component {
                       name='cost' 
                       placeholder="cost" 
                       type='number'
+                      required
                     />
                   </div>
                   <div className='tea-form-item'>
@@ -113,6 +118,7 @@ export default class AddTeaForm extends Component {
                       placeholder="link" 
                       size="17"
                       type='text'
+                      required
                     />
                   </div>
                     <button className='tea-submit btn-class'>Submit</button>

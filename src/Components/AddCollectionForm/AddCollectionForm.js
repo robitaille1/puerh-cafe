@@ -59,6 +59,7 @@ export default class AddCollectionForm extends React.Component  {
               value={this.state.name} 
               size="17"
               className='collection-input'
+              required
             />
             <button className='btn-class' type='submit'>Submit</button>
         </form>

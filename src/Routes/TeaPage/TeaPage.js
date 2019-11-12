@@ -65,7 +65,7 @@ export default class TeaPage extends React.Component {
                   </div>
                   <h4 className='tea-quantity'>{tea.quantity}g</h4>
                   <h5 className='tea-cost'>Purchased for: ${tea.cost}.00</h5>
-                  <a target="_blank" href={`${tea.link}`} className='tea-link'>Link</a>
+                  <a target="_blank" rel="noopener noreferrer" href={`${tea.link}`} className='tea-link'>Link</a>
                   <div className='btn-div'>
                     <p><Link className='collection-link-tea' to={`/collection/${tea.collectionid}`}>Back to Collection</Link></p>
                     <button className='btn-class' onClick={this.handleDeleteTea}>Delete Tea</button>

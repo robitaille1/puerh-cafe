@@ -48,7 +48,7 @@ export default class AddSessionForm extends Component {
 
   render() {
     const { teas=[] } = this.context
-    
+    teas.sort((a, b) => (a.vendor > b.vendor) ? 1 : -1)
     return (
       <main className='AddSessionForm'>
         <section className="add">
@@ -56,8 +56,8 @@ export default class AddSessionForm extends Component {
                 <form onSubmit={this.handleSubmit} className='form-container'>
                   <div className='session-form-item'>
                     <label htmlFor="tea-name">Tea Name: </label>
-                    <select className='tea-select' name='tea-name'>
-                      <option className='option' value={true} disabled>Pick a tea</option>
+                    <select required className='tea-select' name='tea-name'>
+                      <option className='option' disabled>Pick a tea</option>
                       {teas.map(tea => 
                         <option className='option' key={tea.id} value={tea.name}>{tea.year} {tea.vendor} - {tea.name}</option>
                       )}
@@ -70,19 +70,20 @@ export default class AddSessionForm extends Component {
                       className='number-input'
                       name='quantity' 
                       placeholder="in grams" 
+                      required
                     />
                   </div>
                   <div className='session-form-item'>
                     <label htmlFor="parameters">Parameters: </label>
-                    <textarea placeholder='water temp, steep time etc.. ' name='parameters' size="17" className='session-area'></textarea>
+                    <textarea required placeholder='water temp, steep time etc.. ' name='parameters' size="17" className='session-area' required></textarea>
                   </div>
                   <div className='session-form-item'>
                     <label htmlFor="notes">Notes: </label>
-                    <textarea placeholder='earthy, sweet etc..' name='notes' size="17" className='session-area'></textarea> 
+                    <textarea required placeholder='earthy, sweet etc..' name='notes' size="17" className='session-area' required></textarea> 
                   </div>
                   <div className='session-form-item'>
                     <label htmlFor="rating">Rating: </label>
-                    <input className='number-input' name='rating' placeholder="10" size="17" />
+                    <input required className='number-input' name='rating' placeholder="10" size="17" />
                   </div>
                     <button className='btn-class'>Submit</button>
                 </form>
