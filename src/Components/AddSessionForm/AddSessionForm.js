@@ -75,11 +75,11 @@ export default class AddSessionForm extends Component {
                   </div>
                   <div className='session-form-item'>
                     <label htmlFor="parameters">Parameters: </label>
-                    <textarea required placeholder='water temp, steep time etc.. ' name='parameters' size="17" className='session-area' required></textarea>
+                    <textarea required placeholder='water temp, steep time etc.. ' name='parameters' size="17" className='session-area' ></textarea>
                   </div>
                   <div className='session-form-item'>
                     <label htmlFor="notes">Notes: </label>
-                    <textarea required placeholder='earthy, sweet etc..' name='notes' size="17" className='session-area' required></textarea> 
+                    <textarea required placeholder='earthy, sweet etc..' name='notes' size="17" className='session-area' ></textarea> 
                   </div>
                   <div className='session-form-item'>
                     <label htmlFor="rating">Rating: </label>
