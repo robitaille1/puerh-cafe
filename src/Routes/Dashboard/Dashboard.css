@@ -16,11 +16,8 @@ button {
 
 .collections {
   padding: 0px 5%;
-  /* background-color: rgb(250, 246, 209);
-  border: 5px solid burlywood; */
   background-color: #16183e;
   border-radius: 10px;
-  /* box-shadow: 0 0 15px rgba(138, 137, 137, 0.199); */
 }
 
 .section-title {

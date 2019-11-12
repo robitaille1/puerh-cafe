@@ -13,10 +13,6 @@ input, textarea, select {
     color: black;
 }
 
-input.tea-submit  {
-    margin-left: 6em;
-}
-
 .add {
     padding: 20px 5%;
     background-color: #16183e;
