@@ -1,4 +1,4 @@
- .bold {
+.bold {
   font-weight: bold;
 }
 
@@ -36,13 +36,8 @@
   border: 1px solid #0c0d1b;
   border-radius: 10px;
   padding: 6px 15px;
-  opacity: 0.8;
   transition: 0.5s;
   margin-bottom: 15px;
-}
-
-.collection-link-tea:hover {
-  opacity: 1;
 }
 
 

@@ -1,0 +1,12 @@
+.tea-page-item {
+  border: 1px solid rgba(170, 168, 168, 0.507);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(138, 137, 137, 0.199);
+  padding: 5px 10px;
+  color: black;
+}
+
+.bold-black {
+    font-weight: bold;
+    color: black;
+}

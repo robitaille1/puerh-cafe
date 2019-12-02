@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import ApiContext from '../../Context/ApiContext'
 import Nav from '../../Components/Nav/Nav'
+import './AllTea.css'
 
 
 
@@ -26,15 +27,15 @@ export default class TeaPage extends React.Component {
     return (
       <main className='TeaPage'>
         <Nav />
-        <section className="container">
-            <ul>
+        <div className='container-div'>
+        <section className="container collections">
                 {teas.map(tea =>
-                    <Link to={`/tea/${tea.id}`} key={tea.id}>
-                        <li >{tea.year} {tea.name} - {tea.vendor} - <span className='bold'>Collection: {this.getCollectionName(tea.collectionid)}</span></li>
+                    <Link className='collection-link'to={`/tea/${tea.id}`} key={tea.id}>
+                        <div className='tea-page-item collection'>{tea.year} {tea.name} - {tea.vendor} - <span className='bold-black'>Collection: {this.getCollectionName(tea.collectionid)}</span></div>
                     </Link> 
                 )}
-            </ul>
         </section>
+        </div>
       </main>
     );
   }
